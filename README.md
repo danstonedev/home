@@ -1,31 +1,48 @@
-# Personal Homepage
+# DevPT — devpt.app
 
-This is the source code for my personal homepage, designed to be hosted on GitHub Pages.
+The master home page and hub for **DevPT**: a growing platform of simulation and
+assessment tools for physical therapy education, built at the University of North
+Dakota.
 
-## Features
-- **University of North Dakota Theme**: Uses UND Green (#009A44) and Black.
-- **Responsive Grid**: Layout for linking to other web applications.
-- **Local Development**: Includes a local server setup.
+It's a single, self-contained static site (no build step) so it deploys to GitHub
+Pages instantly and maps cleanly to the `devpt.app` custom domain.
 
-## Getting Started
+## Stack
 
-### Prerequisites
-- Node.js installed.
+- `index.html` — markup & content (app cards live here)
+- `styles.css` — dark / tech theme, UND-green accent
+- `app.js` — scroll reveal, stat count-up, category filtering, card glow
+- `CNAME` — custom domain (`devpt.app`)
 
-### Running Locally
-1. Install dependencies (optional, as `npx` handles it, but good practice):
-   ```bash
-   npm install
-   ```
-2. Start the development server:
-   ```bash
-   npm start
-   ```
-3. Open your browser to `http://localhost:8080`.
+Fonts (Space Grotesk + Inter) load from Google Fonts; everything else is local.
 
-## Deployment
-This site is designed for GitHub Pages.
-1. Push the code to your GitHub repository (`https://github.com/danstonedev/home`).
-2. Go to Repository Settings -> Pages.
-3. Select `main` branch (or `master`) as the source.
-4. Your site will be live at `https://danstonedev.github.io/home/` (or your custom domain).
+## Run locally
+
+```bash
+npm start          # serves at http://localhost:8080 (http-server, no caching)
+```
+
+Or just open `index.html` in a browser.
+
+## Add an application
+
+Copy a card block in `index.html` (inside `#appGrid`) and set:
+
+- `href` — the app's live URL (use `target="_blank" rel="noopener noreferrer"`)
+- `data-cat` — one or more of `simulation`, `anatomy`, `motion` (space-separated)
+- icon, title, `card-tag`, description, and a `badge-live` / `badge-soon` badge
+
+The category filter chips pick the new card up automatically via `data-cat`.
+
+## Deploy
+
+GitHub Pages, `main` branch root (repo: `danstonedev/home`).
+
+1. Push to `main`.
+2. Repo **Settings → Pages**: Source = `main` / root.
+3. **Settings → Pages → Custom domain** = `devpt.app` (the `CNAME` file already sets this).
+4. DNS for `devpt.app` (at your registrar):
+   - `A` records for the apex `@` → GitHub Pages IPs:
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `CNAME` for `www` → `danstonedev.github.io`
+5. Enable **Enforce HTTPS** once the certificate is issued.

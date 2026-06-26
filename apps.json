@@ -1,0 +1,131 @@
+{
+  "_comment": "Single source of truth for the DevPT app catalog. Edit apps here; index.html's 'Practice tools' nav and footer list are rendered from this file by app.js. To add a full marketing plate, also add an <article class=\"plate\" id=\"app-<id>\"> block in index.html. placement values: 'hero' | 'nav' | 'plate' | 'footer'.",
+  "domain": "https://devpt.app",
+  "deploy": "Azure Static Web Apps (.github/workflows/azure-static-web-apps-black-tree-0e898330f.yml)",
+  "apps": [
+    {
+      "id": "painmap",
+      "name": "PainMap",
+      "tag": "painmap",
+      "footerLabel": "PainMap",
+      "category": "research",
+      "url": "https://pain3d.com",
+      "repo": "danstonedev/3DPainMap",
+      "status": "live",
+      "placement": ["hero", "footer"],
+      "blurb": "Pain in three dimensions — a research instrument beyond the 0–10 scale."
+    },
+    {
+      "id": "emrsim",
+      "name": "EMRsim",
+      "tag": "emrsim",
+      "footerLabel": "EMRsim",
+      "category": "simulation",
+      "url": "https://emrsim.devpt.app",
+      "repo": "danstonedev/VSPx-EMRsim",
+      "status": "live",
+      "placement": ["nav", "plate", "footer"],
+      "blurb": "Documentation that behaves like a real chart."
+    },
+    {
+      "id": "vspx",
+      "name": "VSPx Chat",
+      "tag": "vspx",
+      "footerLabel": "VSPx",
+      "category": "simulation",
+      "url": "https://vspx.devpt.app",
+      "repo": "danstonedev/vspx-v2",
+      "status": "live",
+      "placement": ["nav", "plate", "footer"],
+      "blurb": "A virtual patient to interview, on demand."
+    },
+    {
+      "id": "simpacs",
+      "name": "simPACS",
+      "tag": "simpacs",
+      "footerLabel": "simPACS",
+      "category": "imaging",
+      "url": "https://simpacs.devpt.app",
+      "repo": "danstonedev/anatomy-viewer",
+      "status": "live",
+      "placement": ["nav", "plate", "footer"],
+      "blurb": "The imaging workstation, hands-on."
+    },
+    {
+      "id": "aquatic",
+      "name": "Aquatic Therapy",
+      "tag": "aquatic",
+      "footerLabel": "Aquatic",
+      "category": "simulation",
+      "url": "https://aquatic.devpt.app",
+      "repo": "danstonedev/aquatic-therapy",
+      "status": "live",
+      "placement": ["nav", "plate", "footer"],
+      "blurb": "How the body responds to water.",
+      "note": "Repo deploy workflow is currently gated on a missing Azure secret (inert) as of 2026-06; verify the subdomain is actually serving."
+    },
+    {
+      "id": "lab",
+      "name": "DevPT Lab",
+      "tag": "lab",
+      "footerLabel": "DevPT Lab",
+      "category": "platform",
+      "url": "https://lab.devpt.app",
+      "repo": "danstonedev/devpt",
+      "status": "live",
+      "placement": ["nav", "plate", "footer"],
+      "blurb": "The whole encounter, start to finish."
+    }
+  ],
+  "unlisted": [
+    {
+      "id": "scope-or-nope",
+      "name": "ScopeOrNope",
+      "repo": "danstonedev/scope-or-nope",
+      "status": "live-unlisted",
+      "url": "https://danstonedev.github.io/scope-or-nope/",
+      "note": "Clinical-triage swipe game (React, GitHub Pages). Candidate hub card — verify URL before listing."
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness",
+      "repo": "danstonedev/wellness",
+      "status": "live-unlisted",
+      "url": "https://danstonedev.github.io/wellness/",
+      "note": "ICF / 8-dimensions case-study sim (React, GitHub Pages). Candidate hub card — verify URL."
+    },
+    {
+      "id": "anatomy-database-app",
+      "name": "PT Rapid Recall",
+      "repo": "danstonedev/anatomy-database-app",
+      "status": "live-unlisted",
+      "url": "",
+      "note": "Muscle/nerve reference DB (Next.js + Prisma, Azure SWA). URL TBD; candidate hub card."
+    },
+    {
+      "id": "mash",
+      "name": "MASH / IMU Connect",
+      "repo": "danstonedev/MASH",
+      "status": "internal",
+      "url": "",
+      "note": "IMU motion-capture platform (ESP32 + React/three.js, Azure SWA). URL TBD."
+    }
+  ],
+  "engines": [
+    {
+      "id": "scenario-engine",
+      "repo": "danstonedev/scenario-engine",
+      "role": "Branching clinical-scenario engine; consumed by devpt as a git submodule."
+    },
+    {
+      "id": "pose-engine",
+      "repo": "danstonedev/pose-engine",
+      "role": "Shared 3D rig/pose library; consumed by 3DPainMap, anatomy-viewer, aquatic-therapy. Currently also the de-facto source of the runtime mannequin GLBs."
+    },
+    {
+      "id": "vspx-3d-assets",
+      "repo": "danstonedev/vspx-3d-assets",
+      "role": "Intended canonical mannequin GLB assets — currently UNCONSUMED (apps copy GLBs from pose-engine/models instead). Resolve the source of truth."
+    }
+  ]
+}

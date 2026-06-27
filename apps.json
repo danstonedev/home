@@ -101,22 +101,17 @@
       "placement": ["footer"],
       "blurb": "The eight dimensions of wellness, one case at a time.",
       "note": "Promoted from unlisted 2026-06-27 (P1 #10). Footer-only, design-safe. Live URL verified HTTP 200 (Vite/React SPA; JS bundle loads 200; populations + 8 wellness-domain case-study data confirmed in repo)."
-    },
-    {
-      "id": "anatomy-database-app",
-      "name": "PT Rapid Recall",
-      "tag": "rapid-recall",
-      "footerLabel": "Rapid Recall",
-      "category": "research",
-      "url": "https://thankful-flower-0c1d6480f.4.azurestaticapps.net/",
-      "repo": "danstonedev/anatomy-database-app",
-      "status": "live",
-      "placement": ["footer"],
-      "blurb": "Muscles and nerves, on instant recall.",
-      "note": "Promoted from unlisted 2026-06-27 (P1 #10). Footer-only, design-safe. Real Azure SWA hostname discovered (region prefix '.4') and verified HTTP 200, serving 'Anatomy Database / PT Rapid Recall' search UI. Next.js+Prisma standalone build; no devpt.app subdomain assigned, so the raw SWA URL is used for now."
     }
   ],
   "unlisted": [
+    {
+      "id": "anatomy-database-app",
+      "name": "PT Rapid Recall",
+      "repo": "danstonedev/anatomy-database-app",
+      "status": "internal",
+      "url": "https://thankful-flower-0c1d6480f.4.azurestaticapps.net/",
+      "note": "Held OFF the public hub 2026-06-27: the P1 #10 footer promotion was reverted after review. (1) Only a raw region-prefixed Azure SWA host is available, not a stable devpt.app subdomain; (2) PORTFOLIO flags this app runs `prisma db push --accept-data-loss` against prod on every deploy with no tests / unclear auth, so it is not ready for public hub traffic. Promote once it has a real subdomain and a confirmed data-safety posture."
+    },
     {
       "id": "mash",
       "name": "MASH / IMU Connect",

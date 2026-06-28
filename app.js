@@ -119,4 +119,38 @@
       })
       .catch(function () { /* keep the static fallback lists */ });
   }
+
+  /* ===== Encounter rail: tabbed steps, one demo mounted at a time ===== */
+  var railTabs = Array.prototype.slice.call(document.querySelectorAll(".railtab"));
+  var stages = Array.prototype.slice.call(document.querySelectorAll(".stage"));
+  if (railTabs.length && stages.length) {
+    var activateStep = function (step) {
+      railTabs.forEach(function (t) {
+        var on = t.getAttribute("data-step") === step;
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      stages.forEach(function (s) {
+        var on = s.getAttribute("data-step") === step;
+        if (on) { s.removeAttribute("hidden"); } else { s.setAttribute("hidden", ""); }
+        var v = s.querySelector("video");
+        if (v) {
+          if (on) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else { try { v.pause(); } catch (e) {} }
+        }
+      });
+    };
+    railTabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { activateStep(t.getAttribute("data-step")); });
+      t.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          var dir = e.key === "ArrowRight" ? 1 : -1;
+          var next = railTabs[(i + dir + railTabs.length) % railTabs.length];
+          next.focus();
+          activateStep(next.getAttribute("data-step"));
+        }
+      });
+    });
+  }
 })();

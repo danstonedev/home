@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevPT simLAB — clinical-encounter simulation for DPT education</title>
-    <meta name="description" content="simLAB gives DPT students reps on the whole clinical encounter — interview, reason, document, decide — before their first real patient. Pre-built, objective-aligned cases that drop into one unit of one course and pilot in a single cohort with pre/post data." />
+    <title>DevPT simLAB — let DPT students run a whole patient visit</title>
+    <meta name="description" content="simLAB lets DPT students run a whole patient visit before they meet a real one — one pre-built case, a different tool at every step: simEMR, simCHAT, simPAIN, simPACS. Drops into one course; pilot with one cohort." />
     <meta name="theme-color" content="#FCFCFB" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="DevPT simLAB — clinical-encounter simulation for DPT education" />
-    <meta property="og:description" content="Reps on the whole clinical encounter before the first real patient — pre-built, objective-aligned cases that drop into one course and pilot in one cohort." />
+    <meta property="og:title" content="DevPT simLAB — run a whole patient visit before the real one" />
+    <meta property="og:description" content="Pre-built clinical cases your students work end to end — a different tool at every step. Built to drop into one course." />
     <meta property="og:url" content="https://devpt.app/" />
     <meta property="og:site_name" content="DevPT" />
 
@@ -28,8 +28,8 @@
                 <img src="assets/devpt-logo.svg" alt="DevPT" width="64" height="30" />
             </a>
             <nav class="nav-links" aria-label="Primary">
+                <a href="#modules">How it works</a>
                 <a href="#scenarios">Scenarios</a>
-                <a href="#modules">Modules</a>
                 <a href="#painmap">PainMap</a>
                 <a href="#about">About</a>
                 <a href="#pilot" class="btn btn-green cta-sm">Request a pilot</a>
@@ -38,18 +38,18 @@
     </header>
 
     <main>
-        <!-- ===== Hero (outcome + proof) ===== -->
+        <!-- ===== Hero ===== -->
         <section class="hero split">
             <div class="wrap hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow reveal"><span class="mono">// DevPT simLAB &middot; clinical-encounter simulation for DPT education</span></p>
-                    <h1 class="reveal">Your students know the content. Give them reps on the whole encounter before their first patient.</h1>
-                    <p class="lede reveal">simLAB is pre-built, objective-aligned clinical cases your students work end to end &mdash; interview, reason, document, decide. Designed to drop into one unit of one course, and to pilot in a single cohort with pre/post data.</p>
+                    <p class="eyebrow reveal"><span class="mono">// DevPT simLAB &middot; clinical practice for DPT students</span></p>
+                    <h1 class="reveal">Let students run a whole patient visit before they meet a real one.</h1>
+                    <p class="lede reveal">Pre-built clinical cases your students work end to end &mdash; read the chart, interview the patient, decide, write the note. Built to drop into one course and pilot with one cohort.</p>
                     <div class="hero-cta reveal">
                         <a href="mailto:danstone.pt@gmail.com?subject=simLAB%20pilot%20inquiry&body=Institution%3A%0ACourse%20%2F%20term%3A%0ACohort%20size%3A%0AWhat%20you'd%20like%20students%20to%20practice%3A%0A" class="btn btn-green btn-lg">Request a pilot</a>
-                        <a href="#sample" class="btn btn-ghost btn-lg">See a sample case &rarr;</a>
+                        <a href="#modules" class="btn btn-ghost btn-lg">Watch a case run &rarr;</a>
                     </div>
-                    <p class="hero-note reveal mono">simLAB runs at <a href="https://lab.devpt.app" target="_blank" rel="noopener">lab.devpt.app</a> &middot; the pain-mapping engine behind simPAIN is in real clinical use at <a href="https://pain3d.com" target="_blank" rel="noopener">pain3d.com</a></p>
+                    <p class="hero-note reveal mono">simLAB runs at <a href="https://lab.devpt.app" target="_blank" rel="noopener">lab.devpt.app</a> &middot; the engine behind simPAIN is in clinical use at <a href="https://pain3d.com" target="_blank" rel="noopener">pain3d.com</a></p>
                 </div>
                 <figure class="hero-viz reveal">
                     <div class="frame">
@@ -60,23 +60,178 @@
                             <img src="assets/shots/painmap.png" alt="3D pain-pattern mapping on a body model" />
                         </video>
                     </div>
-                    <figcaption>simPAIN — the 3D pain-pattern module, built on the PainMap clinical engine.</figcaption>
+                    <figcaption>simPAIN &mdash; map pain in 3D, built on the PainMap clinical engine. One of the tools below.</figcaption>
                 </figure>
             </div>
         </section>
 
-        <!-- ===== Clinical-arc strip ===== -->
-        <section class="arc-strip">
+        <!-- ===== Encounter Rail: one case, a tool at every step ===== -->
+        <section class="rail" id="modules">
+            <div class="rail-head">
+                <div class="wrap">
+                    <h2 class="reveal">One case, start to finish &mdash; a different tool at every step.</h2>
+                    <p class="rail-meta mono reveal">Running now: Maria, 34 &mdash; acute low back pain, new bladder-symptom note<sup class="cite"><a href="#ref-1">1</a></sup></p>
+                    <p class="rail-sub reveal">Click a step to see what the student does &mdash; and the tool they use to do it. Same patient the whole way through.</p>
+                    <div class="rail-track reveal" role="tablist" aria-label="Encounter steps">
+                        <button class="railtab is-active" type="button" role="tab" aria-selected="true" aria-controls="stage-1" data-step="1">Chart</button>
+                        <button class="railtab" type="button" role="tab" aria-selected="false" aria-controls="stage-2" data-step="2">Interview</button>
+                        <button class="railtab" type="button" role="tab" aria-selected="false" aria-controls="stage-3" data-step="3">Screen</button>
+                        <button class="railtab" type="button" role="tab" aria-selected="false" aria-controls="stage-4" data-step="4">Reason</button>
+                        <button class="railtab" type="button" role="tab" aria-selected="false" aria-controls="stage-5" data-step="5">Educate</button>
+                        <button class="railtab" type="button" role="tab" aria-selected="false" aria-controls="stage-6" data-step="6">Document</button>
+                        <button class="railtab" type="button" role="tab" aria-selected="false" aria-controls="stage-7" data-step="7">Reflect</button>
+                    </div>
+                </div>
+            </div>
             <div class="wrap">
-                <p class="reveal">Every case runs the full clinical arc &mdash; <b>chart review &rarr; interview &rarr; screen &rarr; reason &amp; decide &rarr; educate &rarr; document &rarr; reflect</b> &mdash; and each step produces something faculty can grade. Across 600+ studies, technology-enhanced simulation produced large gains in knowledge and skills.<sup class="cite"><a href="#ref-1">1</a></sup></p>
+                <div class="rail-stages">
+                    <!-- 1 Chart / simEMR -->
+                    <div class="stage is-active" id="stage-1" data-step="1" role="tabpanel">
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 1 &middot; Chart</p>
+                            <p class="stage-task">She opens the chart and catches the new bladder-symptom note.</p>
+                            <p class="stage-powered mono">powered by <b>simEMR</b></p>
+                            <p class="stage-artifact"><span class="achip">&rarr; case summary</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="frame">
+                                <div class="frame-bar"><span class="live-dot" aria-hidden="true"></span><span class="frame-url mono">emrsim.devpt.app</span></div>
+                                <video class="plate-video lazyvid" loop muted playsinline preload="none" poster="assets/shots/emrsim.png" aria-label="simEMR — reading a clinical chart">
+                                    <source src="assets/demos/emrsim.mp4" type="video/mp4" />
+                                    <source src="assets/demos/emrsim.webm" type="video/webm" />
+                                    <img src="assets/shots/emrsim.png" alt="simEMR chart" />
+                                </video>
+                            </div>
+                            <a class="modlink" id="app-emrsim" href="https://emrsim.devpt.app" target="_blank" rel="noopener">Open simEMR &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- 2 Interview / simCHAT (poster only) -->
+                    <div class="stage" id="stage-2" data-step="2" role="tabpanel" hidden>
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 2 &middot; Interview</p>
+                            <p class="stage-task">She asks the saddle-anesthesia and red-flag questions.</p>
+                            <p class="stage-powered mono">powered by <b>simCHAT</b></p>
+                            <p class="stage-artifact"><span class="achip">&rarr; interview record</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="frame">
+                                <div class="frame-bar"><span class="live-dot" aria-hidden="true"></span><span class="frame-url mono">vspx.devpt.app</span></div>
+                                <div class="chatposter">
+                                    <img src="assets/shots/vspx.png" alt="simCHAT — virtual patient interview" loading="lazy" />
+                                    <span class="chatbubble mono">"Any numbness in the saddle area?"</span>
+                                </div>
+                            </div>
+                            <a class="modlink" id="app-vspx" href="https://vspx.devpt.app" target="_blank" rel="noopener">Open the live patient &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- 3 Screen / simPAIN -->
+                    <div class="stage" id="stage-3" data-step="3" role="tabpanel" hidden>
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 3 &middot; Screen</p>
+                            <p class="stage-task">She maps where the pain is and how it spreads.</p>
+                            <p class="stage-powered mono">powered by <b>simPAIN</b></p>
+                            <p class="stage-artifact"><span class="achip">&rarr; pain map</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="frame">
+                                <div class="frame-bar"><span class="live-dot" aria-hidden="true"></span><span class="frame-url mono">pain3d.com</span></div>
+                                <video class="plate-video lazyvid" loop muted playsinline preload="none" poster="assets/shots/painmap.png" aria-label="simPAIN — 3D pain-pattern mapping">
+                                    <source src="assets/demos/painmap.mp4" type="video/mp4" />
+                                    <source src="assets/demos/painmap.webm" type="video/webm" />
+                                    <img src="assets/shots/painmap.png" alt="3D pain map" />
+                                </video>
+                            </div>
+                            <a class="modlink" href="https://pain3d.com" target="_blank" rel="noopener">Open PainMap &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- 4 Reason / simPACS -->
+                    <div class="stage" id="stage-4" data-step="4" role="tabpanel" hidden>
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 4 &middot; Reason</p>
+                            <p class="stage-task">She reads the imaging and decides: treat or refer.</p>
+                            <p class="stage-powered mono">powered by <b>simPACS</b></p>
+                            <p class="stage-artifact"><span class="achip">&rarr; clinical decision</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="frame">
+                                <div class="frame-bar"><span class="live-dot" aria-hidden="true"></span><span class="frame-url mono">simpacs.devpt.app</span></div>
+                                <video class="plate-video lazyvid" loop muted playsinline preload="none" poster="assets/shots/simpacs.png" aria-label="simPACS — imaging workstation">
+                                    <source src="assets/demos/simpacs.mp4" type="video/mp4" />
+                                    <source src="assets/demos/simpacs.webm" type="video/webm" />
+                                    <img src="assets/shots/simpacs.png" alt="simPACS imaging workstation" />
+                                </video>
+                            </div>
+                            <a class="modlink" id="app-simpacs" href="https://simpacs.devpt.app" target="_blank" rel="noopener">Open simPACS &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- 5 Educate / no module -->
+                    <div class="stage" id="stage-5" data-step="5" role="tabpanel" hidden>
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 5 &middot; Educate</p>
+                            <p class="stage-task">She explains the plan to the patient in plain language.</p>
+                            <p class="stage-powered mono">no tool &mdash; this is communication</p>
+                            <p class="stage-artifact"><span class="achip">&rarr; teaching note</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="stage-quiet">
+                                <p class="mono qlabel">Collected so far</p>
+                                <div class="qchips"><span class="achip done">case summary</span><span class="achip done">interview record</span><span class="achip done">pain map</span><span class="achip done">clinical decision</span></div>
+                                <p class="qnote">No screen this step. The student teaches back the plan and checks the patient understands it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 6 Document / simEMR again -->
+                    <div class="stage" id="stage-6" data-step="6" role="tabpanel" hidden>
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 6 &middot; Document</p>
+                            <p class="stage-task">She writes a note that carries the safety reasoning &mdash; the same chart, now being written into.</p>
+                            <p class="stage-powered mono">powered by <b>simEMR</b></p>
+                            <p class="stage-artifact"><span class="achip">&rarr; SOAP note</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="frame">
+                                <div class="frame-bar"><span class="live-dot" aria-hidden="true"></span><span class="frame-url mono">emrsim.devpt.app</span></div>
+                                <video class="plate-video lazyvid" loop muted playsinline preload="none" poster="assets/shots/emrsim.png" aria-label="simEMR — writing the note">
+                                    <source src="assets/demos/emrsim.mp4" type="video/mp4" />
+                                    <source src="assets/demos/emrsim.webm" type="video/webm" />
+                                    <img src="assets/shots/emrsim.png" alt="simEMR note" />
+                                </video>
+                            </div>
+                            <a class="modlink" href="https://emrsim.devpt.app" target="_blank" rel="noopener">Open simEMR &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- 7 Reflect / no module -->
+                    <div class="stage" id="stage-7" data-step="7" role="tabpanel" hidden>
+                        <div class="stage-context">
+                            <p class="stage-step mono">Step 7 &middot; Reflect</p>
+                            <p class="stage-task">She revises the call after feedback.</p>
+                            <p class="stage-powered mono">no tool &mdash; this is professional growth</p>
+                            <p class="stage-artifact"><span class="achip">&rarr; reflection</span></p>
+                        </div>
+                        <div class="stage-demo">
+                            <div class="stage-quiet">
+                                <p class="mono qlabel">The trail, all gradable</p>
+                                <div class="qchips"><span class="achip done">case summary</span><span class="achip done">interview record</span><span class="achip done">pain map</span><span class="achip done">clinical decision</span><span class="achip done">SOAP note</span><span class="achip done">reflection</span></div>
+                                <p class="qnote">One case leaves a trail of work you can drop straight into your rubric.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="rail-closer reveal" id="app-lab" href="https://lab.devpt.app" target="_blank" rel="noopener">
+                    <span><b>simLAB</b> plays all seven steps as one continuous visit.</span>
+                    <span class="arr">Open simLAB &nearr;</span>
+                </a>
+                <p class="rail-trail reveal">One case leaves a trail you grade: case summary &middot; interview record &middot; pain map &middot; SOAP note &middot; reflection &mdash; mapped to the reasoning, communication, safety, and documentation skills students struggle with most at first rotation.<sup class="cite"><a href="#ref-2">2</a></sup></p>
+                <p class="rail-aside mono reveal"><a href="https://aquatic.devpt.app" id="app-aquatic" target="_blank" rel="noopener">simAQUA</a> is a specialty aquatic module, available separately &mdash; not part of this case.</p>
             </div>
         </section>
 
-        <!-- ===== Scenario packs (the lead) ===== -->
+        <!-- ===== Scenario packs (other cases on the same rail) ===== -->
         <section class="block" id="scenarios">
             <div class="wrap">
                 <div class="head reveal">
-                    <h2>It starts with the scenario, not the tools.</h2>
+                    <h2>Other scenarios run the same seven steps.</h2>
                     <p>Each pack is a pre-built clinical case that ships with learning objectives, a CAPTE/NPTE alignment, the student artifact, and a grading rubric &mdash; built to drop into your course with minimal setup. Customization comes later.</p>
                 </div>
                 <div class="packs reveal">
@@ -117,21 +272,6 @@
                         </div>
                     </article>
                 </div>
-                <p class="gradable reveal">Every pack produces work you can drop into your existing rubric &mdash; a SOAP note, a clinical decision, and a reflection &mdash; mapped to the reasoning, communication, safety, and documentation skills students struggle with most at first rotation. And this is why scenarios matter for your program: in PT education, replacing up to a quarter of clinical placement with simulation produced comparable student competency across the core domains of practice.<sup class="cite"><a href="#ref-2">2</a></sup></p>
-
-                <!-- Worked example -->
-                <div class="sample reveal" id="sample">
-                    <h3>One pack, end to end.</h3>
-                    <p>Take <b>Red Flags in Acute Low Back Pain</b> (pilot-ready). A student works the case through the full arc &mdash; and leaves a trail you grade:</p>
-                    <ol class="sample-flow">
-                        <li><span class="sk">Chart review</span> reads the EMR and notices the bladder-symptom note <span class="arr-i">&rarr;</span> <i>case summary</i></li>
-                        <li><span class="sk">Interview</span> asks the saddle-anesthesia and symptom-progression questions <span class="arr-i">&rarr;</span> <i>interview record</i></li>
-                        <li><span class="sk">Screen &amp; decide</span> recognizes the red-flag cluster and chooses refer vs treat <span class="arr-i">&rarr;</span> <i>clinical decision</i></li>
-                        <li><span class="sk">Document</span> writes a defensible note carrying the safety reasoning <span class="arr-i">&rarr;</span> <i>SOAP note</i></li>
-                        <li><span class="sk">Reflect</span> revises the decision after feedback <span class="arr-i">&rarr;</span> <i>reflection</i></li>
-                    </ol>
-                    <p class="sample-note">Each artifact maps to the pack's rubric, so it slots into how you already grade.</p>
-                </div>
             </div>
         </section>
 
@@ -151,48 +291,6 @@
                 <p class="derisk reveal mono">Runs in your browser &mdash; no install, no LMS integration, and no protected health information.</p>
                 <div class="reveal" style="margin-top:26px">
                     <a href="mailto:danstone.pt@gmail.com?subject=simLAB%20pilot%20inquiry&body=Institution%3A%0ACourse%20%2F%20term%3A%0ACohort%20size%3A%0AWhat%20you'd%20like%20students%20to%20practice%3A%0A" class="btn btn-green btn-lg">Request a pilot &mdash; one unit, one cohort</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== Modules (compact) ===== -->
-        <section class="block" id="modules">
-            <div class="wrap">
-                <div class="head reveal">
-                    <h2>What's inside each case.</h2>
-                    <p>Each module is a component of a pre-built case. simLAB runs them as one continuous encounter &mdash; the modules aren't the product, the cases are.</p>
-                </div>
-                <div class="modgrid reveal">
-                    <div class="modcard">
-                        <p class="modname">simPAIN</p>
-                        <p class="moddesc">3D pain-pattern learning for clinical reasoning &mdash; the lead wedge.</p>
-                        <a href="https://pain3d.com" target="_blank" rel="noopener" class="modlink">The engine behind it &nearr;</a>
-                    </div>
-                    <a class="modcard" id="app-emrsim" href="https://emrsim.devpt.app" target="_blank" rel="noopener">
-                        <p class="modname">simEMR <span class="livedot mono">live</span></p>
-                        <p class="moddesc">Documentation that behaves like a real chart.</p>
-                        <span class="modlink">Open &nearr;</span>
-                    </a>
-                    <a class="modcard" id="app-vspx" href="https://vspx.devpt.app" target="_blank" rel="noopener">
-                        <p class="modname">simCHAT <span class="livedot mono">live</span></p>
-                        <p class="moddesc">A virtual patient to interview, on demand &mdash; where virtual patients show the clearest benefit.<sup class="cite"><a href="#ref-3">3</a></sup></p>
-                        <span class="modlink">Open &nearr;</span>
-                    </a>
-                    <a class="modcard" id="app-simpacs" href="https://simpacs.devpt.app" target="_blank" rel="noopener">
-                        <p class="modname">simPACS <span class="livedot mono">live</span></p>
-                        <p class="moddesc">Imaging-informed reasoning, hands-on.</p>
-                        <span class="modlink">Open &nearr;</span>
-                    </a>
-                    <a class="modcard" id="app-aquatic" href="https://aquatic.devpt.app" target="_blank" rel="noopener">
-                        <p class="modname">simAQUA <span class="livedot mono">live</span></p>
-                        <p class="moddesc">How the body responds to water &mdash; a specialty module.</p>
-                        <span class="modlink">Open &nearr;</span>
-                    </a>
-                    <a class="modcard flag" id="app-lab" href="https://lab.devpt.app" target="_blank" rel="noopener">
-                        <p class="modname">simLAB <span class="livedot mono">live</span></p>
-                        <p class="moddesc">The whole scenario, start to finish &mdash; where the modules come together as one case.</p>
-                        <span class="modlink">Open simLAB &nearr;</span>
-                    </a>
                 </div>
             </div>
         </section>

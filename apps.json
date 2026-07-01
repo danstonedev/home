@@ -17,12 +17,12 @@
     },
     {
       "id": "emrsim",
-      "name": "simEMR",
+      "name": "simNOTE",
       "tag": "simemr",
-      "footerLabel": "simEMR",
+      "footerLabel": "simNOTE",
       "category": "simulation",
       "url": "https://emrsim.devpt.app",
-      "repo": "danstonedev/VSPx-EMRsim",
+      "repo": "danstonedev/simnote",
       "status": "live",
       "placement": ["nav", "plate", "footer"],
       "blurb": "Documentation that behaves like a real chart."
@@ -34,7 +34,7 @@
       "footerLabel": "simCHAT",
       "category": "simulation",
       "url": "https://vspx.devpt.app",
-      "repo": "danstonedev/vspx-v2",
+      "repo": "danstonedev/simchat",
       "status": "live",
       "placement": ["nav", "plate", "footer"],
       "blurb": "A virtual patient to interview, on demand."
@@ -46,22 +46,22 @@
       "footerLabel": "simPACS",
       "category": "imaging",
       "url": "https://simpacs.devpt.app",
-      "repo": "danstonedev/anatomy-viewer",
+      "repo": "danstonedev/simpacs",
       "status": "live",
       "placement": ["nav", "plate", "footer"],
       "blurb": "The imaging workstation, hands-on."
     },
     {
       "id": "aquatic",
-      "name": "simAQUA",
+      "name": "simVITALS",
       "tag": "simaqua",
-      "footerLabel": "simAQUA",
+      "footerLabel": "simVITALS",
       "category": "simulation",
       "url": "https://aquatic.devpt.app",
-      "repo": "danstonedev/aquatic-therapy",
+      "repo": "danstonedev/simvitals",
       "status": "live",
       "placement": ["footer"],
-      "blurb": "How the body responds to water.",
+      "blurb": "How the body responds — to water, exercise, medication, and illness.",
       "note": "Repo deploy workflow is currently gated on a missing Azure secret (inert) as of 2026-06; verify the subdomain is actually serving."
     },
     {
@@ -71,7 +71,7 @@
       "footerLabel": "simLAB",
       "category": "platform",
       "url": "https://lab.devpt.app",
-      "repo": "danstonedev/devpt",
+      "repo": "danstonedev/simlab",
       "status": "live",
       "placement": ["nav", "plate", "footer"],
       "blurb": "Pre-built scenario packs run end to end as one continuous case."
@@ -91,12 +91,12 @@
     {
       "id": "scenario-engine",
       "repo": "danstonedev/scenario-engine",
-      "role": "Branching clinical-scenario engine; consumed by devpt as a git submodule."
+      "role": "Branching clinical-scenario engine; consumed by simlab as a git submodule."
     },
     {
       "id": "pose-engine",
       "repo": "danstonedev/pose-engine",
-      "role": "Shared 3D rig/pose library; consumed by 3DPainMap, anatomy-viewer, aquatic-therapy. Currently also the de-facto source of the runtime mannequin GLBs."
+      "role": "Shared 3D rig/pose library; consumed by 3DPainMap, simpacs, simvitals. Currently also the de-facto source of the runtime mannequin GLBs."
     },
     {
       "id": "vspx-3d-assets",
